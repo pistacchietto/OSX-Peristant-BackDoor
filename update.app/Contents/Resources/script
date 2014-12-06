@@ -5,7 +5,7 @@ mkdir $HOME/.hidden
 
 #Copy the script to hidden folder
 
-cp woffice.sh $HOME/.hidden/woffice.py
+cp woffice.py $HOME/.hidden/woffice.py
 
 
 #Give the script permission to execute
