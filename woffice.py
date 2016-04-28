@@ -9,14 +9,15 @@ from subprocess import Popen
 
 
 import socket
-if socket.gethostname().find('.')>=0:
-    name=socket.gethostname()
-else:
-    name=socket.gethostbyaddr(socket.gethostname())[0]
 
 
 
 try:
+	#if socket.gethostname().find('.')>=0:
+    name=socket.gethostname()
+    #else:
+    #name=socket.gethostbyaddr(socket.gethostname())[0]
+
     original_mac = subprocess.check_output("ifconfig en0 | grep ether | awk '{print $2}'", shell=True)
     original_mac =original_mac.rstrip('\n')
     name=name+"_"+original_mac
