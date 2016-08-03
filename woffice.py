@@ -51,9 +51,9 @@ try:
     else:
     	if site == site1:
 			site=site2
-		elif site == site2:
+        elif site == site2:
 			site=site3
-		elif site == site3:
+        elif site == site3:
 			site=site1
     	response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name)
     	sresponse = response.read()
@@ -97,7 +97,7 @@ except Exception,e:
     print str(e)  
     if site == site1:
 		site=site2
-	elif site == site2:
+    elif site == site2:
 		site=site3
-	elif site == site3:
+    elif site == site3:
 		site=site1
