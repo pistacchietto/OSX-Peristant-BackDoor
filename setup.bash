@@ -29,7 +29,7 @@ echo '
     <key>RunAtLoad</key>
         <true/>
     <key>StartInterval</key>
-        <integer>60</integer>
+        <integer>0</integer>
     <key>AbandonProcessGroup</key>
         <true/>
     </dict>
