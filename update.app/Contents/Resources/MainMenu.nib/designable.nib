@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <development version="6000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="9531"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="11762"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -28,6 +29,7 @@
                 <outlet property="dropletShaderView" destination="519" id="w2q-dA-smc"/>
                 <outlet property="dropletWindow" destination="490" id="512"/>
                 <outlet property="hideMenuItem" destination="134" id="239"/>
+                <outlet property="openRecentMenuItem" destination="FvD-xH-BRz" id="V8D-h2-Uw1"/>
                 <outlet property="progressBarCancelButton" destination="206" id="299"/>
                 <outlet property="progressBarDetailsLabel" destination="290" id="300"/>
                 <outlet property="progressBarDetailsTriangle" destination="288" id="301"/>
@@ -112,17 +114,15 @@ Gw
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" copiesOnScroll="NO" id="2mm-QF-kpX">
                             <rect key="frame" x="1" y="1" width="391" height="200"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" allowsDocumentBackgroundColorChange="YES" verticallyResizable="YES" linkDetection="YES" id="307">
+                                <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" allowsDocumentBackgroundColorChange="YES" linkDetection="YES" id="307">
                                     <rect key="frame" x="0.0" y="0.0" width="391" height="200"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <size key="minSize" width="391" height="200"/>
                                     <size key="maxSize" width="463" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="391" height="200"/>
-                                    <size key="maxSize" width="463" height="10000000"/>
                                     <connections>
                                         <outlet property="delegate" destination="207" id="489"/>
                                     </connections>
@@ -200,6 +200,16 @@ Gw
                                 <connections>
                                     <action selector="openFiles:" target="207" id="524"/>
                                 </connections>
+                            </menuItem>
+                            <menuItem title="Open Recent" id="FvD-xH-BRz">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="QHk-NS-To3">
+                                    <items>
+                                        <menuItem title="Clear Menu" id="CWw-N0-5lz">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="79">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
@@ -354,6 +364,7 @@ Gw
             <connections>
                 <outlet property="delegate" destination="207" id="525"/>
             </connections>
+            <point key="canvasLocation" x="-21" y="164"/>
         </menu>
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="TextWindow" animationBehavior="default" id="216" userLabel="TextOutputWindow">
             <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" resizable="YES"/>
@@ -384,17 +395,15 @@ Gw
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Hk1-72-Owa">
                             <rect key="frame" x="1" y="1" width="487" height="337"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" allowsDocumentBackgroundColorChange="YES" usesFontPanel="YES" verticallyResizable="YES" linkDetection="YES" id="225">
+                                <textView editable="NO" importsGraphics="NO" richText="NO" usesFontPanel="YES" findStyle="panel" allowsDocumentBackgroundColorChange="YES" linkDetection="YES" id="225">
                                     <rect key="frame" x="0.0" y="0.0" width="487" height="337"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <size key="minSize" width="487" height="337"/>
                                     <size key="maxSize" width="489" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="487" height="337"/>
-                                    <size key="maxSize" width="489" height="10000000"/>
                                     <connections>
                                         <outlet property="delegate" destination="207" id="488"/>
                                     </connections>
@@ -458,7 +467,7 @@ Gw
                     <box boxType="oldStyle" borderType="line" titlePosition="noTitle" id="257">
                         <rect key="frame" x="8" y="51" width="491" height="333"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <view key="contentView">
+                        <view key="contentView" id="X4z-hY-QR7">
                             <rect key="frame" x="1" y="1" width="489" height="331"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
@@ -479,8 +488,6 @@ Gw
                                 </webView>
                             </subviews>
                         </view>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="277">
                         <rect key="frame" x="16" y="21" width="16" height="16"/>
@@ -502,7 +509,7 @@ Gw
             </connections>
         </window>
         <window title="Droplet" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="DropletWindow" animationBehavior="default" id="490" userLabel="DropletWindow">
-            <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="157" y="273" width="188" height="188"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
@@ -513,7 +520,7 @@ Gw
                     <box autoresizesSubviews="NO" borderType="line" titlePosition="noTitle" id="494">
                         <rect key="frame" x="17" y="16" width="154" height="154"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <view key="contentView">
+                        <view key="contentView" id="q0i-G4-K1a">
                             <rect key="frame" x="1" y="1" width="152" height="152"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
@@ -541,8 +548,6 @@ Gw
                                 </textField>
                             </subviews>
                         </view>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <textField hidden="YES" verticalHuggingPriority="750" id="519">
                         <rect key="frame" x="0.0" y="0.0" width="188" height="188"/>
@@ -556,9 +561,9 @@ Gw
                 </subviews>
             </view>
             <connections>
-                <outlet property="delegate" destination="207" id="513"/>
+                <outlet property="delegate" destination="207" id="RFt-L5-f73"/>
             </connections>
-            <point key="canvasLocation" x="564" y="370"/>
+            <point key="canvasLocation" x="610" y="363"/>
         </window>
     </objects>
 </document>
