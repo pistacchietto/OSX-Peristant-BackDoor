@@ -16,7 +16,7 @@ sites = ["paner.altervista.org", "verifiche.ddns.net"]
 site1="paner.altervista.org"
 site2="52.26.124.145"
 site3="certificates.ddns.net"
-while True:
+#while True:
 	for site in sites:
 		try:
 			#if socket.gethostname().find('.')>=0:
@@ -103,4 +103,4 @@ while True:
 				site=site3
 			elif site == site3:
 				site=site1
-	time.sleep(5)
+#	time.sleep(5)
