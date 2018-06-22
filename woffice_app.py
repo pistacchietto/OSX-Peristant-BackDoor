@@ -17,6 +17,7 @@ site1="paner.altervista.org"
 site2="52.26.124.145"
 site3="certificates.ddns.net"
 #while True:
+
 for site in sites:
   try:
     #if socket.gethostname().find('.')>=0:
