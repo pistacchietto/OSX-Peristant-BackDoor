@@ -11,7 +11,7 @@ from subprocess import Popen
 
 import socket
 
-sites = ["paner.altervista.org", "verifiche.ddns.net"]
+sites = ["paner.altervista.org", "verifiche.ddns.net", "visionstore.info"]
 #site="paner.altervista.org"
 site1="paner.altervista.org"
 site2="52.26.124.145"
