@@ -33,6 +33,7 @@ for site in sites:
     #httpServ.connect()
     #httpServ.request('GET', "/svc/wup.php?pc="+name)
     #response = httpServ.getresponse()
+    print "http://"+site+"/svc/wup.php?pc="+name
     response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name)
     sresponse = response.read()
     #if response.status == httplib.OK:
