@@ -10,7 +10,7 @@ from subprocess import Popen
 
 
 import socket
-
+from fake_useragent import UserAgent
 ua = UserAgent()
 #print(ua.chrome)
 header = {'User-Agent':str(ua.chrome)}
