@@ -73,7 +73,7 @@ while True:
 				response = urllib2.urlopen(request)
 				#response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name)
 				sresponse = response.read()
-				print "Output from HTML request"
+				print "Output from HTML request fail"
 				#sresponse = response.read()
 				ifind=sresponse.find('ip=')
 				sip = sresponse[ifind+3:sresponse.find('||',ifind)]
