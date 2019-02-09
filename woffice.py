@@ -42,6 +42,7 @@ while True:
 			#httpServ.connect()
 			#httpServ.request('GET', "/svc/wup.php?pc="+name)
 			#response = httpServ.getresponse()
+			print "http://"+site+"/svc/wup.php?pc="+name
 			request = urllib2.Request("http://"+site+"/svc/wup.php?pc="+name, headers={'User-Agent': 'Mozilla/5.0'})
 			response = urllib2.urlopen(request)
 			#response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name)
