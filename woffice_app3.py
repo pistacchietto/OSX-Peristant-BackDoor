@@ -10,7 +10,7 @@ import subprocess
 from os import path, access, R_OK
 from subprocess import Popen
 from uuid import getnode as get_mac
-
+from getmac import get_mac_address
 
 import socket
 
@@ -45,7 +45,8 @@ for site in sites:
 
     #original_mac = subprocess.check_output("/sbin/ifconfig en0 | grep ether | awk 'NR==1{print $2}'", shell=True)
     #original_mac =original_mac.rstrip('\n')
-    original_mac=str(get_mac())
+    #original_mac=str(get_mac())
+    original_mac=get_mac_address()
     name=name+"_"+original_mac+"_app"
     print (original_mac)
     #httpServ = httplib.HTTPConnection("paner.altervista.org", 80)
