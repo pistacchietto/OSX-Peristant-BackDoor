@@ -1,1 +1,0 @@
-/Users/davidepistacchio/Documents/GitHub/OSX-Peristant-BackDoor/woffice_app.py

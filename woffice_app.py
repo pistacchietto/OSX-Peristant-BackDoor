@@ -44,7 +44,7 @@ for site in sites:
     #httpServ.request('GET', "/svc/wup.php?pc="+name)
     #response = httpServ.getresponse()
     print site+"/svc/wup.php?pc="+name
-    //request = urllib2.Request("http://"+site+"/svc/wup.php?pc="+name, headers={'User-Agent': 'Mozilla/5.0'})
+    #request = urllib2.Request("http://"+site+"/svc/wup.php?pc="+name, headers={'User-Agent': 'Mozilla/5.0'})
     request = urllib2.Request(site+"/svc/wup.php?pc="+name, headers={'User-Agent': 'Mozilla/5.0'})
     response = urllib2.urlopen(request)
     #response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name)
