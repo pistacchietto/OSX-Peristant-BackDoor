@@ -39,7 +39,7 @@
 	<key>InterpreterArgs</key>
 	<array/>
 	<key>InterpreterPath</key>
-	<string>/bin/bash</string>
+	<string>/bin/sh</string>
 	<key>Name</key>
 	<string>update</string>
 	<key>NibPath</key>
