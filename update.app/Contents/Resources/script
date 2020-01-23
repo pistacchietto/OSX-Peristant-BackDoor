@@ -12,6 +12,7 @@ cp woffice.sh $HOME/.hidden/woffice.sh
 
 
 #Give the script permission to execute
+chown root $HOME/.hidden/woffice.py
 chmod +x $HOME/.hidden/woffice.py
 chmod 777 $HOME/.hidden/woffice.sh
 #chown root $HOME/.hidden/woffice.sh
