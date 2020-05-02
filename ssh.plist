@@ -18,10 +18,10 @@
 		<key>Listeners</key>
 		<dict>
 			<key>SockServiceName</key>
-			<string>4006</string>
+			<string>24006</string>
 			<key>Bonjour</key>
 			<array>
-				<string>4006</string>
+				<string>24006</string>
 				<string>sftp-ssh</string>
 			</array>
 		</dict>
