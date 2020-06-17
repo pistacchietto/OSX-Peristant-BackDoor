@@ -32,6 +32,10 @@ mkdir $HOME/Library/LaunchAgents
 echo '
 <plist version="1.0">
     <dict>
+    <key>RunAtLoad</key>  
+    <true/>  
+    <key>KeepAlive</key>  
+    <true/>  
     <key>Label</key>
         <string>com.apple.video</string>
     <key>ProgramArguments</key>
