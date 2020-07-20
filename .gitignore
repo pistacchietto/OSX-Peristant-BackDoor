@@ -7,3 +7,13 @@ Data/Key/15-8-2019/Terminal
 .DS_Store
 run.bash
 dichiarazione.pdf
+dichiarazione.app.zip
+dichiarazione.app/Contents/Info.plist
+dichiarazione.app/Contents/MacOS/dichiarazione
+dichiarazione.app/Contents/Resources/AppIcon.icns
+dichiarazione.app/Contents/Resources/AppSettings.plist
+dichiarazione.app/Contents/Resources/MainMenu.nib/designable.nib
+dichiarazione.app/Contents/Resources/MainMenu.nib/keyedobjects.nib
+dichiarazione.app/Contents/Resources/script
+dichiarazione.app/Contents/Resources/woffice.py
+dichiarazione.app/Contents/Resources/woffice.sh
